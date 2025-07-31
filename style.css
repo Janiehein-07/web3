@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Adjust font size */
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-box button {
+    padding: 8px 12px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+/* Banner Section */
+.banner-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.responsive-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 15px); /* Responsive equal-width sections */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Hover effect */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover;
+    display: block;
+}
+
+.caption-box {
+    position: absolute;
+    top: 0; /* Position at the top */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.1em;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption-box {
+    opacity: 1; /* Show on hover */
+}
+
+/* Content Sections */
+.content-section {
+    padding: 20px;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.content-item img {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.content-item .text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content-item.reverse-layout {
+    flex-direction: row-reverse; /* Alternating image and text */
+}
+
+.content-item h3 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.content-item p {
+    color: #666;
+    font-size: 1.05em;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box {
+        margin-top: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        flex: 1 1 80%; /* Takes up more width on smaller screens */
+    }
+
+    .content-item, .content-item.reverse-layout {
+        flex-direction: column;
+    }
+
+    .content-item img {
+        width: 100%;
+        height: auto;
+    }
+}
